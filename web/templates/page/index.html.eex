@@ -1,0 +1,9 @@
+
+<div style="text-align:center">
+  <h1>crazy banana </h1>
+  <img src="/images/banana.gif">
+  <form action="/lobby">
+    <input type="text" name="name" value="">
+    <input type="submit" name="join" value="Choose a player name">
+  </form>
+</div>

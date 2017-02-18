@@ -1,0 +1,16 @@
+<script type="text/javascript">
+  window.userId = "<%= @id %>";
+</script>
+
+<div id="game">
+  <div id="time">Waiting for players</div>
+  <div id="score">0</div>
+  <ul id="players">
+  </ul>
+
+  <div style="text-align:center">
+    <form action="/ready">
+      <button id="ready">Ready</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<script type="text/javascript">
+  window.userId = "<%= @id %>";
+</script>
+
+<div id="lobby">
+  <div style="text-align:center">
+    <h1>You are <%= @id %></h1>
+    <button type="button" name="button" id="start">start game</button>
+  </div>
+
+  <ul id="games">
+    <li>There are no games yet!</li>
+  </ul>
+</div>

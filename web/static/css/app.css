@@ -1,0 +1,22 @@
+/* This file is for your main application css. */
+
+body {
+  background: yellow;
+}
+
+h1 {
+  font-size: 78px;
+  color: black;
+}
+
+#game {
+  background: black;
+  width: 730px;
+  height: 400px;
+}
+
+button {
+  font-size: 48px;
+  width: 400px;
+  height: 60px;
+}
