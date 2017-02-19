@@ -4,15 +4,20 @@
 </script>
 
 <div id="game">
-  <button type="button" name="button" id="quit">x</button>
-  <div id="time">Waiting for players</div>
-  <div id="score">0</div>
+  <div id="time"><div>60</div></div>
+  <button type="button" name="quit" id="quit">x</button>
+  <button type="button" name="ready" id="ready">ready</button>
+  <button type="button" name="start" id="start" class="hidden">start</button>
+  <button type="button" name="restart" id="restart" class="hidden">restart</button>
+  <div class="jumbotron" style="top:50%;position:absolute;height:400px;margin-top:-200px;width:100%;vertical-align:middle">
+    <h2 id="title" class="animated pulse">Waiting<br>for<br>players</h2>
+  </div>
+
+
+  <div id="score"><span class="score-title">Score:</span><span class="score-value">0</span></div>
   <ul id="players">
   </ul>
 
-  <div style="text-align:center">
-    <form action="/ready">
-      <button id="ready">Ready</button>
-    </form>
+  <div id="bananas">
   </div>
 </div>

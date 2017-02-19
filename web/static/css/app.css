@@ -19,6 +19,7 @@ body {
 
 .jumbotron {
   background: none;
+  border-bottom: none;
 }
 
 .header {
@@ -47,9 +48,13 @@ main {
   padding: 0;
 }
 
-h2#welcome {
+h2 {
   font-size: 96px;
   font-family: 'Fontdiner Swanky', cursive;
+}
+h2#title {
+  font-size: 48px;
+  color: white;
 }
 
 .meta {
@@ -91,18 +96,25 @@ input[type=text] {
 }
 
 #game {
-  background: black;
+  background: #222;
   width: 100%;
   height: 100%;
   position: absolute;
   left: 0;
   top: 0;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 #game #quit {
   font-family: Helvetica;
   font-size: 16px;
-  background: black;
+  background: #222;
   color: white;
   border: 0;
 }
@@ -125,6 +137,72 @@ input[type=text] {
   border-radius: 5px;
   width: 300px;
   margin: 8px;
+  position: relative;
+}
+
+#game li .score {
+  display: inline-block;
+  position: absolute;
+  right: 48px;
+  text-align: right;
+  color: black;
+}
+
+#game li .state {
+  display: inline-block;
+  position: absolute;
+  background: red;
+  right: 12px;
+  top: 50%;
+  margin-top: -12px;
+  border-radius: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+#game li .state.ready {
+  background: green;
+}
+
+#game #time {
+  z-index:0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 150px;
+  margin:12px;
+  margin-left: -75px;
+  text-align: center;
+  color: white;
+  border: none;
+  font-family: 'Londrina Solid', cursive;
+  font-size: 72px;
+  letter-spacing: 4px;
+}
+
+
+#game #score {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+  margin:12px;
+  color: white;
+  border: none;
+  font-family: 'Londrina Solid', cursive;
+  font-size: 28px;
+}
+
+#game #score .score-value {
+  display: inline-block;
+  margin-left: 10px;
+  color: yellow;
+}
+
+#game .banana {
+  height: 80px;
+  position: absolute;
+  display: block;
 }
 
 /*
