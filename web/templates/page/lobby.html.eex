@@ -3,9 +3,13 @@
 </script>
 
 <div id="lobby">
+  <div class="jumbotron">
+    <h2 id="welcome" class="animated pulse">Join a game</h2>
+  </div>
+
   <div style="text-align:center">
     <h1>You are <%= @id %></h1>
-    <button type="button" name="button" id="start">start game</button>
+    <a href="/game?id=<%= @id %>&name=<%= @id %>" class="btn" id="start">Start a game</a>
   </div>
 
   <ul id="games">

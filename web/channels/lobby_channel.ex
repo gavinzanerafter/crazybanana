@@ -8,36 +8,6 @@ defmodule Crazybanana.LobbyChannel do
     {:ok, games, socket}
   end
 
-  def handle_in("start_game", params, socket) do
-    id = params["id"]
-
-    pid =
-      case Crazybanana.Game.Supervisor.create_game(id) do
-        {:ok, pid} -> pid
-        {:error, {:already_started, pid}} -> pid
-      end
-
-    game = GenServer.call(pid, :get_data)
-
-    send self(), {:after_start, game.state}
-
-    {:reply, {:ok, game}, socket}
-  end
-
-  def handle_in("quit_game", params, socket) do
-    id = params["id"]
-
-    Crazybanana.Game.Supervisor.quit_game(id)
-
-    {:reply, :ok, socket}
-  end
-
-  def handle_info({:after_start, _state}, socket) do
-    Crazybanana.LobbyChannel.broadcast_current_games
-
-    {:noreply, socket}
-  end
-
   @doc """
   If you send a `games` message, we'll reply with the current list of games
   """

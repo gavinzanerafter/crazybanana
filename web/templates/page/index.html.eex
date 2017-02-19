@@ -1,9 +1,11 @@
+<div class="jumbotron">
+  <h2 id="welcome" class="animated pulse">crazy<br>banana</h2>
+</div>
 
-<div style="text-align:center">
-  <h1>crazy banana </h1>
-  <img src="/images/banana.gif">
+<div style="text-align:center;margin-top:-100px;">
+  <img src="/images/banana.gif" height="300">
   <form action="/lobby">
-    <input type="text" name="name" value="">
-    <input type="submit" name="join" value="Choose a player name">
+    <input type="text" name="name" value=""><br>
+    <input class="btn" type="submit" name="join" value="Choose a player name">
   </form>
 </div>

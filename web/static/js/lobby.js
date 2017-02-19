@@ -9,34 +9,7 @@ let Lobby = {
     Lobby.attachEvents()
   },
 
-  // quitGame() {
-  //   Game.lobby.push("quit_game", {id: window.userId, name: window.userId + "'s game"})
-  //     .receive('ok', reply => {
-  //       // If we successfully joined, we should have received a current
-  //       // list of games to display
-  //       console.log(reply)
-  //     })
-  //     .receive('error', reply => {
-  //       // It is not the best user experience to just log errors...
-  //       console.log("AHHHHHHHHHHHHH", reply)
-  //     })
-  // },
-
   attachEvents() {
-    let startEl = document.getElementById("start")
-    startEl.onclick = () => {
-      Lobby.channel.push("start_game", {id: window.userId})
-        .receive('ok', reply => {
-          // If we successfully joined, we should have received a current
-          // list of games to display
-          console.log(reply)
-          Lobby.renderGames(reply.games)
-        })
-        .receive('error', reply => {
-          // It is not the best user experience to just log errors...
-          console.log(`Sorry, you can't join because ${reply.reason}`)
-        })
-    }
   },
 
   connect() {
@@ -73,13 +46,21 @@ let Lobby = {
 
   renderGames(games) {
     console.log(games)
-     // Pretty basic render function, maps each game object in the games message
-     let ul = document.getElementById('games')
-     ul.innerHTML = `
-       <ul>
-         ${games.map(game => `<li><a href="/game?name=${window.userId}&id=${game.id}" class="btn orange">Join ${game.id}'s game</a></li>`)}
-       </ul>
-     `
+    // Pretty basic render function, maps each game object in the games message
+    let ul = document.getElementById('games')
+    if (games.length > 0) {
+      ul.innerHTML = `
+        <ul>
+          ${games.map(game => `<li><a href="/game?name=${window.userId}&id=${game.id}" class="btn inverse">Join ${game.id}'s game</a></li>`)}
+        </ul>
+      `
+    } else {
+      ul.innerHTML = `
+      <ul>
+        <li>There are no games available yet</li>
+      </ul>
+      `
+    }
    },
 
 }

@@ -1,8 +1,10 @@
 <script type="text/javascript">
-  window.userId = "<%= @id %>";
+  window.gameId = "<%= @id %>";
+  window.userId = "<%= @user_id %>";
 </script>
 
 <div id="game">
+  <button type="button" name="button" id="quit">x</button>
   <div id="time">Waiting for players</div>
   <div id="score">0</div>
   <ul id="players">

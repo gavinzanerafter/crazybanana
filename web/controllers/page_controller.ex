@@ -14,6 +14,6 @@ defmodule Crazybanana.PageController do
   end
 
   def game(conn, params) do
-    render conn, "game.html", id: params["name"]
+    render conn, "game.html", id: params["id"], user_id: params["name"]
   end
 end

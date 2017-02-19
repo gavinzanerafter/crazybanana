@@ -1,22 +1,162 @@
 /* This file is for your main application css. */
 
+/*
+font-family: 'Fontdiner Swanky', cursive; <- Welcome font; quirky, heavier, better apos
+font-family: 'Londrina Solid', cursive; <- Question and answer font (check out the sketch version)
+*/
+
 body {
   background: yellow;
+  color: black;
+  min-height: 100%;
 }
 
-h1 {
-  font-size: 78px;
+.container {
+  min-height: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+.jumbotron {
+  background: none;
+}
+
+.header {
+  margin-bottom: 30px;
+  min-height: 92px;
+  border-bottom: none;
+}
+
+.header ul {
+  margin-top: 0;
+}
+
+.header ul li {
+  background: white;
+}
+
+.center {
+  text-align: center;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  margin-top: -150px;
+  padding: 0;
+}
+
+h2#welcome {
+  font-size: 96px;
+  font-family: 'Fontdiner Swanky', cursive;
+}
+
+.meta {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+}
+
+.or {
+  margin: 26px;
+  font-size: 26px;
+  font-family: 'Londrina Solid', cursive;
+}
+
+input[type=text] {
+  background-color: white;
   color: black;
+  font-family: 'Londrina Solid', cursive;
+  font-size:36px;
+  border: 0;
+  margin: 10px;
+  text-align: center;
+}
+
+.btn {
+  background-color: black;
+  font-family: 'Londrina Solid', cursive;
+  color: #BBBB33;
+  font-size:36px;
+}
+
+.btn.orange {
+  background-color: orange;
+  color: white;
 }
 
 #game {
   background: black;
-  width: 730px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
-button {
-  font-size: 48px;
-  width: 400px;
-  height: 60px;
+#game #quit {
+  font-family: Helvetica;
+  font-size: 16px;
+  background: black;
+  color: white;
+  border: 0;
+}
+
+#game #players {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+}
+
+#game #players li {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 28px;
+  display: block;
+  background: yellow;
+  color: black;
+  padding: 12px;
+  border-radius: 5px;
+  width: 300px;
+  margin: 8px;
+}
+
+/*
+ * Animation
+*/
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+/* https://webdesignerhut.com/5-animations-using-css-keyframes/ */
+
+/*
+ * Pulse animation
+*/
+
+@-webkit-keyframes pulse {
+  0% { -webkit-transform: scale(1); }
+  50% { -webkit-transform: scale(1.1); }
+  100% { -webkit-transform: scale(1); }
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
 }

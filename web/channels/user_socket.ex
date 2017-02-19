@@ -2,8 +2,8 @@ defmodule Crazybanana.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  channel "game", Crazybanana.GameChannel
   channel "lobby", Crazybanana.LobbyChannel
+  channel "game:*", Crazybanana.GameChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

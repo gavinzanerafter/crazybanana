@@ -12,6 +12,10 @@ defmodule Crazybanana.Game do
     GenServer.call(via_tuple(id), {:join, player})
   end
 
+  def get_data(id) do
+    GenServer.call(via_tuple(id), :get_data)
+  end
+
   def init(id) do
     game = %__MODULE__{
       id: id,
