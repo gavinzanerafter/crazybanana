@@ -1,4 +1,4 @@
-defmodule Plugs.Assigns do
+defmodule Plugs.ActionNames do
     import Plug.Conn
 
     def init(opts), do: opts

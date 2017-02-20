@@ -1,12 +1,14 @@
 defmodule Crazybanana.Game do
   use GenServer
 
+  @seconds 60
+
   defstruct [
     id: nil,
     players: [],
     winner: nil,
     state: nil,
-    seconds: 60,
+    seconds: @seconds,
     x: nil,
     y: nil
   ]
@@ -128,7 +130,7 @@ defmodule Crazybanana.Game do
   end
 
   defp handle_start(game) do
-    game = %{game | state: :playing, seconds: 60, winner: nil, x: nil, y: nil}
+    game = %{game | state: :playing, seconds: @seconds, winner: nil, x: nil, y: nil}
     game = %{game | players: Enum.map(game.players, fn(x) -> %{x | score: 0} end)}
     schedule_tick()
     game

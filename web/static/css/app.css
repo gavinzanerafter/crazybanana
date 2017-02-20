@@ -117,7 +117,22 @@ input[type=text] {
 
 #lobby #games li {
   list-style: none;
-  \
+}
+
+#lobby #quit {
+  font-family: Helvetica;
+  font-size: 16px;
+  background: yellow;
+  border: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#lobby h1 {
+  font-family: 'Londrina Solid', cursive;
+  color: #222;
+  font-size:28px;
 }
 
 #game {
@@ -134,16 +149,6 @@ input[type=text] {
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
-}
-
-#lobby #quit {
-  font-family: Helvetica;
-  font-size: 16px;
-  background: yellow;
-  border: 0;
-  position: absolute;
-  left: 0;
-  top: 0;
 }
 
 #game #quit {
@@ -241,6 +246,10 @@ input[type=text] {
   height: 80px;
   position: absolute;
   display: block;
+}
+
+body.page-controller.shop header ul.nav {
+  display: none;
 }
 
 /*

@@ -4,7 +4,6 @@ defmodule Crazybanana.GameChannel do
   use Crazybanana.Web, :channel
 
   def join("game:" <> id, _msg, socket) do
-    Logger.warn("JOIN")
     pid =
       case Crazybanana.Game.Supervisor.create_game(id) do
         {:ok, pid} -> pid
@@ -35,7 +34,6 @@ defmodule Crazybanana.GameChannel do
   end
 
   def handle_in("player", params, socket) do
-    Logger.warn("PLAYER #{params["id"]}")
     socket =
       socket
       |> assign(:player_id, params["id"])
@@ -48,7 +46,6 @@ defmodule Crazybanana.GameChannel do
   end
 
   def handle_in("ready", params, socket) do
-    Logger.warn("READY #{params["id"]}")
     game_id = socket.assigns[:game_id]
     _ = Crazybanana.Game.ready(game_id, params["id"])
     send self(), {:broadcast, game_id}
@@ -57,7 +54,6 @@ defmodule Crazybanana.GameChannel do
   end
 
   def handle_in("start", _params, socket) do
-    Logger.warn("START")
     game_id = socket.assigns[:game_id]
     _ = Crazybanana.Game.start(game_id)
 
@@ -65,7 +61,6 @@ defmodule Crazybanana.GameChannel do
   end
 
   def handle_in("restart", _params, socket) do
-    Logger.warn("RESTART")
     game_id = socket.assigns[:game_id]
     _ = Crazybanana.Game.restart(game_id)
 
@@ -73,7 +68,6 @@ defmodule Crazybanana.GameChannel do
   end
 
   def handle_in("done", _params, socket) do
-    Logger.warn("DONE")
     game_id = socket.assigns[:game_id]
     _ = Crazybanana.Game.Supervisor.quit_game(game_id)
 
@@ -81,7 +75,6 @@ defmodule Crazybanana.GameChannel do
   end
 
   def handle_in("score", params, socket) do
-    Logger.warn("SCORE")
     game_id = socket.assigns[:game_id]
     player_id = socket.assigns[:player_id]
     _ = Crazybanana.Game.score(game_id, player_id, params["score"])
@@ -92,10 +85,10 @@ defmodule Crazybanana.GameChannel do
   def terminate(reason, _socket) do
     # When the client leaves or closes the connection
     case reason do
-      {:shutdown, :closed} -> Logger.debug("<<<<< SHUTDOWN CLOSED")
-      {:shutdown, :left} -> Logger.debug("<<<<< SHUTDOWN LEFT")
+      {:shutdown, :closed} -> Logger.debug("SHUTDOWN CLOSED")
+      {:shutdown, :left} -> Logger.debug("SHUTDOWN LEFT")
     end
-
+    
     :ok
   end
 

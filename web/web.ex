@@ -37,7 +37,7 @@ defmodule Crazybanana.Web do
       import Crazybanana.Router.Helpers
       import Crazybanana.Gettext
 
-      plug Plugs.Assigns
+      plug Plugs.ActionNames
     end
   end
 
