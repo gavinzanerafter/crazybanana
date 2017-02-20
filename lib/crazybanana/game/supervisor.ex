@@ -19,6 +19,7 @@ defmodule Crazybanana.Game.Supervisor do
 
   def quit_game(id) do
     pid = GenServer.whereis(via_tuple(id))
+    Crazybanana.Endpoint.broadcast("game:#{id}", "shutdown", %{})
     Supervisor.terminate_child(__MODULE__, pid)
   end
 

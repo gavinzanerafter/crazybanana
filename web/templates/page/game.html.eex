@@ -9,6 +9,7 @@
   <button type="button" name="ready" id="ready">ready</button>
   <button type="button" name="start" id="start" class="hidden">start</button>
   <button type="button" name="restart" id="restart" class="hidden">restart</button>
+  <button type="button" name="done" id="done" class="hidden">done</button>
   <div class="jumbotron" style="top:50%;position:absolute;height:400px;margin-top:-200px;width:100%;vertical-align:middle">
     <h2 id="title" class="animated pulse">Waiting<br>for<br>players</h2>
   </div>

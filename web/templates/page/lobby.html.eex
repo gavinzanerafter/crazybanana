@@ -3,6 +3,7 @@
 </script>
 
 <div id="lobby">
+  <button type="button" name="quit" id="quit">x</button>
   <div class="jumbotron">
     <h2 id="welcome" class="animated pulse">Join a game</h2>
   </div>

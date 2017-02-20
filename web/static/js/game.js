@@ -26,6 +26,8 @@ let Game = {
     startEl.onclick = Game.start
     let restartEl = document.getElementById("restart")
     restartEl.onclick = Game.restart
+    let doneEl = document.getElementById("done")
+    doneEl.onclick = Game.done
   },
 
   connect() {
@@ -62,6 +64,11 @@ let Game = {
         console.log("TICK!", game)
         Game.current = game
         Game.render()
+      })
+
+      channel.on('shutdown', _message => {
+        console.log("SHUTDOWN!")
+        Game.quit()
       })
   },
 
@@ -108,7 +115,7 @@ let Game = {
   render() {
     if (!Game.current) return
     console.log("Rendering", Game.current)
-    Game.renderStart()
+    Game.renderButtons()
     Game.renderTitle()
     Game.renderTime()
     Game.renderScore()
@@ -116,11 +123,20 @@ let Game = {
     Game.renderBananas()
   },
 
-  renderStart() {
+  renderButtons() {
+    let readyEl = document.getElementById("ready")
+    readyEl.className = Game.isState("waiting") ? "" : "hidden"
     let startEl = document.getElementById("start")
     startEl.className = Game.isReady() ? "" : "hidden"
     let restartEl = document.getElementById("restart")
     restartEl.className = Game.isState("done") ? "" : "hidden"
+
+    let doneEl = document.getElementById("done")
+    if (Game.isState("done")) {
+      doneEl.className = ""
+    } else {
+      doneEl.className = "hidden"
+    }
   },
 
   renderTitle() {
@@ -226,19 +242,31 @@ let Game = {
       return
     }
     Game.channel.push("restart", {})
-    .receive('ok', reply => {
-      console.log("Game restarted")
-    })
-    .receive('error', reply => {
-      console.log(`Error ${reply.reason}`)
-    })
+      .receive('ok', reply => {
+        console.log("Game restarted")
+      })
+      .receive('error', reply => {
+        console.log(`Error ${reply.reason}`)
+      })
   },
 
   quit(e) {
     window.location.href = "/lobby?name=" + window.userId
+  },
+
+  done(e) {
+    if (!Game.isState('done')) {
+      console.log("The game is not done!")
+      return
+    }
+    Game.channel.push("done", {})
+      .receive('ok', reply => {
+        console.log("Game done")
+      })
+      .receive('error', reply => {
+        console.log(`Error ${reply.reason}`)
+      })
   }
-
 }
-
 
 export default Game

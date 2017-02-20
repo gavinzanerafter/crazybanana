@@ -3,6 +3,7 @@
 </div>
 
 <div style="text-align:center;margin-top:-100px;">
+  <a href="/shop" id="shop">shop</a>
   <img src="/images/banana.gif" height="300">
   <form action="/lobby">
     <input type="text" name="name" value=""><br>
