@@ -17,10 +17,12 @@ defmodule Crazybanana.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/shop", PageController, :shop
+    get "/slots", PageController, :slots
+    get "/others", PageController, :others
     get "/crazy", PageController, :crazy
     get "/lobby", PageController, :lobby
     get "/game", PageController, :game
-    get "/shop", PageController, :shop
   end
 
   # Other scopes may use custom stacks.

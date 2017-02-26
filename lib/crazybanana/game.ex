@@ -124,6 +124,11 @@ defmodule Crazybanana.Game do
   def handle_info(:finish, game) do
     next = %{game | seconds: 0, state: :done, x: nil, y: nil}
 
+    # Figure out who the winner is
+    max = Enum.max_by(next.players, fn(x) -> x[:score] end)
+    winners = Enum.filter(next.players, fn(x) -> x[:score] == max[:score] end)
+    next = %{next | winner: winners}
+
     Crazybanana.Endpoint.broadcast("game:#{next.id}", "game", next)
 
     {:noreply, next}

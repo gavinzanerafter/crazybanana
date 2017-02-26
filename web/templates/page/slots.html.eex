@@ -1,0 +1,12 @@
+<div id="slots">
+  <div class="circles">
+    <div class="circle dark"></div>
+
+    <div class="circle dark small"></div>
+
+    <div class="circle dark small"></div>
+
+    <div class="circle dark small"></div>
+  </div>
+  <a href="" class="h2" name="others" id="others">others</a>
+</div>

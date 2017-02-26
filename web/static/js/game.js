@@ -152,7 +152,10 @@ let Game = {
     } else if (Game.current.state === "playing") {
       titleEl.innerHTML = ""
     } else if (Game.current.state === "done") {
-      titleEl.innerHTML = "Game over!"
+      let winner = Game.current.winner.map(player => ""+player.name).join(" & ")
+      titleEl.innerHTML = `
+        Game over!<br>${winner} won!
+      `
     }
   },
 

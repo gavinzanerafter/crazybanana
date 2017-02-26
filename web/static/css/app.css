@@ -73,6 +73,21 @@ h2#title {
   font-family: 'Londrina Solid', cursive;
 }
 
+#others {
+  height: 60px;
+  width: 96px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: black;
+  font-size: 30px;
+  font-family: 'Londrina Solid', cursive;
+  background: yellow;
+  border: none;
+
+}
+
+
 #shop {
   background: yellow;
   border: yellow;
@@ -82,6 +97,23 @@ h2#title {
   top: 0;
   left: 0;
   margin: 12px;
+}
+
+body.page-controller.others header ul.nav {
+  display: none;
+}
+
+#slots {
+  color: black;
+  border: none;
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  left: 40px;
+  margin: 12px;
+}
+body.page-controller.slots header ul.nav {
+  display: none;
 }
 
 
@@ -105,6 +137,30 @@ input[type=text] {
 .btn.orange {
   background-color: orange;
   color: white;
+}
+
+.circle {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  background: black;
+  border-radius: 50px;
+}
+
+.circle.small {
+  height: 75px;
+  width: 75px;
+  border-radius: 38px;
+}
+
+.circles {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
 }
 
 #lobby #games {

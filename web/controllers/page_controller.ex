@@ -20,4 +20,12 @@ defmodule Crazybanana.PageController do
   def shop(conn, _params) do
     render conn, "shop.html"
   end
+
+  def slots(conn, _params) do
+    render conn, "slots.html"
+  end
+
+  def others(conn, _params) do
+    render conn, "others.html"
+  end
 end

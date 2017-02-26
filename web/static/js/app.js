@@ -22,14 +22,19 @@ import "phoenix_html"
 
 import Lobby from "./lobby.js"
 import Game from "./game.js"
+import Slots from "./slots.js"
 
 let lobbyEl = document.getElementById('lobby')
 if (lobbyEl) {
   Lobby.init()
 }
 
-
 let gameEl = document.getElementById('game')
 if (gameEl) {
   Game.init()
+}
+
+let slotsEl = document.getElementById('slots')
+if (slotsEl) {
+  Slots.init()
 }
