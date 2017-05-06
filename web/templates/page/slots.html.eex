@@ -1,12 +1,14 @@
-<div id="slots">
-  <div class="circles">
-    <div class="circle dark"></div>
+<div class="circles">
+  <div class="circle dark"></div>
 
-    <div class="circle dark small"></div>
+  <div class="circle dark small"></div>
 
-    <div class="circle dark small"></div>
+  <div class="circle dark small"></div>
 
-    <div class="circle dark small"></div>
-  </div>
-  <a href="" class="h2" name="others" id="others">others</a>
+  <div class="circle dark small"></div>
 </div>
+<div class="jumbotron">
+  <h2 id="welcome" class="animated pulse">recents</h2>
+</div>
+<a href="/others" class="h2" name="others" id="others">others</a>
+<a href="/back" class "h2" name="X" id="X">X</a>

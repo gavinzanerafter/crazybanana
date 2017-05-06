@@ -23,6 +23,7 @@ defmodule Crazybanana.Router do
     get "/crazy", PageController, :crazy
     get "/lobby", PageController, :lobby
     get "/game", PageController, :game
+    get "/remember", PageController, :remember
   end
 
   # Other scopes may use custom stacks.

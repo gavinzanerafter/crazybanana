@@ -1,0 +1,13 @@
+<div class="jumbotron">
+  <p class="swanky animated pulse" style="font-size:36px">Choose your username and your Email address</p>
+</div>
+
+
+<div style="text-align:center;margin-top:0px;">
+  <form action="/lobby">
+    <input type="text" name="name" value="" placeholder="username"><br>
+    <input type="text" name="name" value="" placeholder="Email Address"><br>
+    <br>
+    <input class="btn" type="submit" name="join" value="Done">
+  </form>
+</div>

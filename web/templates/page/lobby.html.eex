@@ -5,7 +5,7 @@
 <div id="lobby">
   <button type="button" name="quit" id="quit">x</button>
   <div class="jumbotron">
-    <h2 id="welcome" class="animated pulse">Join a game</h2>
+    <h2 id="welcome" class="animated pulse">Join a game<br>or start one <%= @id %></h2>
   </div>
 
   <div style="text-align:center">
@@ -14,6 +14,6 @@
   </div>
 
   <ul id="games">
-    <li>There are no games yet!</li>
+    <li>There are no games yet, sorry, <%= @id %>!</li>
   </ul>
 </div>

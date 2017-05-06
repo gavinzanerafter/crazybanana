@@ -82,7 +82,8 @@ defmodule Crazybanana.Game do
       id: player_id,
       name: player_id,
       state: :ready,
-      score: score
+      score: score,
+      connected: true
     }
     players = [player | Enum.reject(game.players, fn(x) -> x[:id] == player_id end)]
     {:reply, {:ok, game.state}, %{game | players: players}}

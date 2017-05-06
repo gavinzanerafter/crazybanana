@@ -28,4 +28,8 @@ defmodule Crazybanana.PageController do
   def others(conn, _params) do
     render conn, "others.html"
   end
+
+  def remember(conn, _params) do
+    render conn, "remember.html"
+  end
 end

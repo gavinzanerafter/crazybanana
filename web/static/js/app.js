@@ -34,7 +34,7 @@ if (gameEl) {
   Game.init()
 }
 
-let slotsEl = document.getElementById('slots')
-if (slotsEl) {
+let circlesEl = document.getElementById('circles')
+if (circlesEl) {
   Slots.init()
 }

@@ -1,0 +1,8 @@
+<div>
+
+  <a href="/others" id="others" name="others">Others</a>
+  <a href="/slots" id="slots">slots</a>
+  <a href="/" id="quit">X</a>
+</div>
+<div class=items>
+  
